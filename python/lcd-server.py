@@ -128,11 +128,8 @@ class LCD:
             self.send(value2)
             self.control.setEnabled(False)
             self.send(value2)
-            self.control.setWriting(False)
-            self.send(0x00)
-        else:
-            self.control.setWriting(False)
-            self.send(0x00)
+        self.control.setWriting(False)
+        self.send(0x00)
         
     def send(self, data_nibble):
         byte_to_send = self.control.asInt()
